@@ -22,7 +22,7 @@ function App({ categoryList }) {
         <main>
           <div className="filters_container">
             <span> Filter: </span>
-            <select onChange={onCategorySelect}>
+            <select onChange={onCategorySelect} value={selectedCategory}>
               <option key="all" value="all">
                 {" "}
                 All Category{" "}
