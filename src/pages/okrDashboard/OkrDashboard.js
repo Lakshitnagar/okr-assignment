@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchOkrs } from "../../utils/container/actions/fetchOkrsAction";
+import { fetchOkrs } from "../../container/actions/fetchOkrsAction";
 import PropTypes from "prop-types";
 import "./OkrDashboard.scss";
 import { hierarchalOkrs } from "../../utils/helper/okrHelper";
-import Objective from "../objective/Objective";
-import KeyResult from "../keyResult/KeyResult";
+import Objective from "../../components/objective/Objective";
+import KeyResult from "../../components/keyResult/KeyResult";
 
 const OkrDashboard = ({ processedOkrs, fetchOkrs }) => {
   useEffect(() => {

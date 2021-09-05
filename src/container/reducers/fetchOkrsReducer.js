@@ -1,4 +1,4 @@
-import { ACTION_CONSTANTS } from "../../constant/actionContants";
+import { ACTION_CONSTANTS } from "../../utils/constant/actionContants";
 
 export const fetchOkrsReducer = (state = {}, action) => {
   switch (action.type) {

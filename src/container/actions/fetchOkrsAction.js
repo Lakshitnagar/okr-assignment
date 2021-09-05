@@ -1,6 +1,6 @@
-import { getOkrs } from "../../api/okrClient";
-import { ACTION_CONSTANTS } from "../../constant/actionContants";
-import { APP_CONSTANTS } from "../../constant/appConstants";
+import { getOkrs } from "../../utils/api/okrClient";
+import { ACTION_CONSTANTS } from "../../utils/constant/actionContants";
+import { APP_CONSTANTS } from "../../utils/constant/appConstants";
 
 const fetchOkrsSet = (data) => (dispatch) => {
   dispatch({

@@ -1,5 +1,5 @@
 import React from "react";
-import OkrDashboard from "./components/okrDashboard/OkrDashboard";
+import OkrDashboard from "./pages/okrDashboard/OkrDashboard";
 import "./App.scss";
 
 function App() {
