@@ -1,0 +1,25 @@
+@use 'shared';
+
+.app_container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e5e4e2;
+}
+
+header {
+  @include shared.card;
+  @include shared.container;
+  font-size: 24px;
+  font-weight: 500;
+  background-color: #09f;
+  color: #fff;
+}
+
+footer {
+  @include shared.card;
+  @include shared.container;
+  background-color: #36454f;
+  color: #fff;
+}

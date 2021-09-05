@@ -1,0 +1,16 @@
+@mixin container {
+  padding: 1rem;
+}
+
+@mixin rounded {
+  border-radius: 5px;
+}
+
+@mixin card {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  @include rounded;
+}
+
+$rowHeight: 5rem;
+$indentVertOffset: 6px;

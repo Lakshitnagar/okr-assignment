@@ -1,17 +1,22 @@
 import React from "react";
-import OkrDashboard from "./components/OkrDashboard";
+import OkrDashboard from "./components/okrDashboard/OkrDashboard";
+import "./App.scss";
 
 function App() {
   return (
-    <>
-      <header> HEADER </header>
+    <div className="app_container">
+      <div>
+        <header>OKR Dashboard</header>
 
-      <main>
-        <OkrDashboard />
-      </main>
+        <main>
+          <OkrDashboard />
+        </main>
+      </div>
 
-      <footer> FOOTER </footer>
-    </>
+      <div>
+        <footer>@Company</footer>
+      </div>
+    </div>
   );
 }
 

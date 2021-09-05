@@ -1,0 +1,57 @@
+@use 'src/shared';
+
+$userImageWidth: 1.5;
+$transformIndent: $userImageWidth * 0.5;
+
+@mixin userImageSize {
+  width: $userImageWidth + rem;
+  height: $userImageWidth + rem;
+}
+
+.objective_container {
+  @include shared.container;
+  @include shared.card;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+
+  .objective_parent {
+    display: flex;
+    min-height: shared.$rowHeight;
+
+    .objective_left_panel {
+      min-width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      margin-right: 1rem;
+
+      .objective_control {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+
+        .objective_show_hide {
+          @include userImageSize;
+        }
+
+        .objective_user {
+          @include userImageSize;
+        }
+      }
+
+      .objective_indent_line {
+        content: "";
+        border: solid #e2e2e2 2px;
+        height: 100%;
+        width: 0;
+        transform: translate($transformIndent + rem, 0);
+      }
+    }
+
+    .objective_right_panel {
+      margin-left: 1rem;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@use 'src/shared';
+
+$userImageWidth: 1.5;
+$transformIndent: $userImageWidth * 0.5;
+$indentLineColor: #e2e2e2;
+
+@mixin userImageSize {
+  width: $userImageWidth + rem;
+  height: $userImageWidth + rem;
+}
+
+.key_result_container {
+  display: flex;
+  min-height: shared.$rowHeight;
+
+  &.odd {
+    background-color: #f8f8f8;
+  }
+  &.even {
+    background-color: #fff;
+  }
+
+  .key_result_left_panel {
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+
+    .key_result_item_line {
+      @include shared.rounded;
+      border: solid $indentLineColor 2px;
+      width: 25%;
+      transform: translate(100%, -50%);
+      position: relative;
+      top: 50%;
+    }
+
+    .key_result_indent_line {
+      content: "";
+      border: solid $indentLineColor 2px;
+      height: shared.$rowHeight;
+      width: 0;
+      transform: translate($transformIndent + rem, 0);
+      position: absolute;
+    }
+  }
+
+  .key_result_right_panel {
+    display: flex;
+    margin-left: 1rem;
+    align-items: center;
+
+    .key_result_control {
+      margin-right: 1rem;
+
+      .key_result_show_hide {
+        @include userImageSize;
+      }
+
+      .key_result_user {
+        @include userImageSize;
+      }
+    }
+
+    .key_result_detail {
+      margin-left: 1rem;
+    }
+  }
+}
