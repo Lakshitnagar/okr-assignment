@@ -8,8 +8,6 @@ import Objective from "../objective/Objective";
 import KeyResult from "../keyResult/KeyResult";
 
 const OkrDashboard = ({ processedOkrs, fetchOkrs }) => {
-  console.log(processedOkrs);
-
   useEffect(() => {
     fetchOkrs();
   }, []);
