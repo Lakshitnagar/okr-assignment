@@ -11,7 +11,6 @@ function App({ categoryList }) {
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
 
   const onCategorySelect = (e) => {
-    console.log(e.target.value);
     setSelectedCategory(e.target.value);
   };
 

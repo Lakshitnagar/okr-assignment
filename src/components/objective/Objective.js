@@ -28,15 +28,13 @@ const Objective = ({ order, data, children }) => {
               <UserCircleIcon className="objective_user" />
             </div>
 
-            <div
-              className="objective_indent_line"
-              style={{
-                visibility: expand ? "visible" : "hidden",
-              }}
-            />
+            {expand ? <div className="objective_indent_line" /> : ""}
           </div>
 
-          <div className="objective_right_panel">
+          <div
+            className="objective_right_panel"
+            style={!expand ? { display: "flex", alignItems: "center" } : {}}
+          >
             {order}. {data.title}
           </div>
         </div>
