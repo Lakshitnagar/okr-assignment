@@ -56,19 +56,23 @@ const OkrDashboard = ({ processedOkrs, fetchOkrs, okrsApiStatus }) => {
           Object.keys(processedOkrs).map((objectiveId, idx) => (
             <div key={processedOkrs[objectiveId].keyId}>
               <Objective order={idx + 1} data={processedOkrs[objectiveId]}>
-                {processedOkrs[objectiveId].children.length ? (
-                  processedOkrs[objectiveId].children.map((keyResult, idx) => {
-                    return (
-                      <KeyResult
-                        key={keyResult.keyId}
-                        order={idx + 1}
-                        data={keyResult}
-                      />
-                    );
-                  })
-                ) : (
-                  <NoData message={"No Key Results"} />
-                )}
+                <>
+                  {processedOkrs[objectiveId].children.length ? (
+                    processedOkrs[objectiveId].children.map(
+                      (keyResult, idx) => {
+                        return (
+                          <KeyResult
+                            key={keyResult.keyId}
+                            order={idx + 1}
+                            data={keyResult}
+                          />
+                        );
+                      }
+                    )
+                  ) : (
+                    <NoData message={"No Key Results"} />
+                  )}
+                </>
               </Objective>
             </div>
           ))}
