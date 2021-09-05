@@ -1,7 +1,6 @@
 @use 'src/styles/shared';
 
-$transformIndent: shared.$userImageWidth * 0.5;
-$indentLineColor: #e2e2e2;
+$transformIndent: shared.$userImageWidth * 0.867;
 
 .key_result_container {
   display: flex;
@@ -17,26 +16,22 @@ $indentLineColor: #e2e2e2;
   .key_result_left_panel {
     min-width: 60px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin-right: 1rem;
+    justify-content: center;
 
     .key_result_item_line {
       @include shared.rounded;
-      border: solid $indentLineColor 2px;
+      border: solid shared.$indentLineColor 2px;
       width: 25%;
-      transform: translate(100%, -50%);
-      position: relative;
-      top: 50%;
+      transform: translate(100%, 0);
     }
 
     .key_result_indent_line {
       content: "";
-      border: solid $indentLineColor 2px;
-      height: shared.$rowHeight;
-      width: 0;
+      border: solid shared.$indentLineColor 2px;
+      height: 100%;
       transform: translate($transformIndent + rem, 0);
-      position: absolute;
     }
   }
 
@@ -54,6 +49,7 @@ $indentLineColor: #e2e2e2;
 
       .key_result_user {
         @include shared.userImageSize;
+        color: #c0c0c0;
       }
     }
 

@@ -8,8 +8,8 @@ const KeyResult = ({ order, data }) => {
     <>
       <div className={`key_result_container ${order % 2 ? "odd" : "even"}`}>
         <div className="key_result_left_panel">
-          <div className="key_result_item_line" />
           <div className="key_result_indent_line" />
+          <div className="key_result_item_line" />
         </div>
 
         <div className="key_result_right_panel">

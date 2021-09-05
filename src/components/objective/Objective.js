@@ -35,7 +35,9 @@ const Objective = ({ order, data, children }) => {
             className="objective_right_panel"
             style={!expand ? { display: "flex", alignItems: "center" } : {}}
           >
-            {order}. {data.title}
+            <span>
+              {order}. {data.title}
+            </span>
           </div>
         </div>
 

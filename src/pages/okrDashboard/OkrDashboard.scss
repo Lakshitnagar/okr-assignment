@@ -1,10 +1,39 @@
 @use 'src/styles/shared';
 
-.filters_container {
-  @include shared.container;
-  margin-top: 1rem;
-}
-
 .dashboard_container {
   @include shared.container;
+
+  .dashboard_api_status {
+    @include shared.card;
+    @include shared.container;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+
+    .dashboard_api_status_icon {
+      width: 5rem;
+      height: 5rem;
+      color: orange;
+    }
+  }
+
+  .dashboard_refresh {
+    @include shared.card;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .dashboard_refresh_icon {
+      @include shared.userImageSize;
+      color: #3034f1;
+    }
+  }
 }

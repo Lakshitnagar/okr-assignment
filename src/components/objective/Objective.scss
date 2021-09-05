@@ -5,7 +5,7 @@ $transformIndent: shared.$userImageWidth * 0.5;
 .objective_container {
   @include shared.container;
   @include shared.card;
-  margin: 1rem 0;
+  margin: 4rem 0;
   display: flex;
   flex-direction: column;
 
@@ -21,6 +21,11 @@ $transformIndent: shared.$userImageWidth * 0.5;
       cursor: pointer;
       margin-right: 1rem;
 
+      &:hover {
+        @include shared.rounded;
+        background-color: #f2f2f2;
+      }
+
       .objective_control {
         display: flex;
         align-items: center;
@@ -32,12 +37,13 @@ $transformIndent: shared.$userImageWidth * 0.5;
 
         .objective_user {
           @include shared.userImageSize;
+          color: #c0c0c0;
         }
       }
 
       .objective_indent_line {
         content: "";
-        border: solid #e2e2e2 2px;
+        border: solid shared.$indentLineColor 2px;
         height: 100%;
         width: 0;
         transform: translate($transformIndent + rem, 0);
@@ -46,6 +52,11 @@ $transformIndent: shared.$userImageWidth * 0.5;
 
     .objective_right_panel {
       margin-left: 1rem;
+
+      span {
+        font-size: larger;
+        font-weight: 500;
+      }
     }
   }
 }

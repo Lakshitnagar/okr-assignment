@@ -8,6 +8,8 @@
   background-color: #e5e4e2;
 
   .filters_container {
+    @include shared.container;
+    margin-top: 1rem;
     select {
       @include shared.card;
       border: none;
@@ -15,6 +17,9 @@
       cursor: pointer;
       &:focus {
         outline: none;
+      }
+      &:hover {
+        background-color: #f2f2f2;
       }
     }
   }
