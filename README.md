@@ -1,5 +1,9 @@
 # OKR Dashboard Assignment
 
+## Find the deployed application here.
+
+https://okrdashboard.herokuapp.com
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
