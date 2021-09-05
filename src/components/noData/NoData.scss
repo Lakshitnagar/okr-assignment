@@ -1,0 +1,13 @@
+@use 'src/styles/shared';
+
+.no_data_container {
+  @include shared.rounded;
+  padding: 2rem;
+  background-color: #f3f3f3;
+  text-align: center;
+  margin: 0.5rem;
+
+  .no_data_icon {
+    @include shared.userImageSize;
+  }
+}

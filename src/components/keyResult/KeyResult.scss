@@ -1,13 +1,7 @@
 @use 'src/styles/shared';
 
-$userImageWidth: 1.5;
-$transformIndent: $userImageWidth * 0.5;
+$transformIndent: shared.$userImageWidth * 0.5;
 $indentLineColor: #e2e2e2;
-
-@mixin userImageSize {
-  width: $userImageWidth + rem;
-  height: $userImageWidth + rem;
-}
 
 .key_result_container {
   display: flex;
@@ -55,11 +49,11 @@ $indentLineColor: #e2e2e2;
       margin-right: 1rem;
 
       .key_result_show_hide {
-        @include userImageSize;
+        @include shared.userImageSize;
       }
 
       .key_result_user {
-        @include userImageSize;
+        @include shared.userImageSize;
       }
     }
 

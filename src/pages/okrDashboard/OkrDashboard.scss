@@ -1,5 +1,10 @@
 @use 'src/styles/shared';
 
+.filters_container {
+  @include shared.container;
+  margin-top: 1rem;
+}
+
 .dashboard_container {
   @include shared.container;
 }

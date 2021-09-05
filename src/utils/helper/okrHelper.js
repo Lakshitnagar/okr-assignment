@@ -40,3 +40,24 @@ export const hierarchalOkrs = (okrs) => {
 
   return processedOkrs;
 };
+
+export const getCategoryList = (okrs) => {
+  if (!okrs) return [];
+
+  let categorySet = new Set();
+
+  okrs.map((okr) => {
+    categorySet.add(okr.category);
+  });
+
+  return Array.from(categorySet);
+};
+
+export const filterOkrsByCategory = (okrs, filterCategory) => {
+  if (!okrs) return [];
+  if (!filterCategory || filterCategory == "all") return okrs;
+
+  return okrs.filter((okr) => {
+    return okr.category === filterCategory;
+  });
+};

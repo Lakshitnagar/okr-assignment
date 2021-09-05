@@ -12,5 +12,11 @@
   @include rounded;
 }
 
+$userImageWidth: 1.5;
+@mixin userImageSize {
+  width: $userImageWidth + rem;
+  height: $userImageWidth + rem;
+}
+
 $rowHeight: 5rem;
 $indentVertOffset: 6px;

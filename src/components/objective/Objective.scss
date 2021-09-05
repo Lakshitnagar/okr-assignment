@@ -1,12 +1,6 @@
 @use 'src/styles/shared';
 
-$userImageWidth: 1.5;
-$transformIndent: $userImageWidth * 0.5;
-
-@mixin userImageSize {
-  width: $userImageWidth + rem;
-  height: $userImageWidth + rem;
-}
+$transformIndent: shared.$userImageWidth * 0.5;
 
 .objective_container {
   @include shared.container;
@@ -33,11 +27,11 @@ $transformIndent: $userImageWidth * 0.5;
         flex-grow: 1;
 
         .objective_show_hide {
-          @include userImageSize;
+          @include shared.userImageSize;
         }
 
         .objective_user {
-          @include userImageSize;
+          @include shared.userImageSize;
         }
       }
 

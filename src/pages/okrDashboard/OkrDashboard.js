@@ -3,29 +3,26 @@ import { connect } from "react-redux";
 import { fetchOkrs } from "../../container/actions/fetchOkrsAction";
 import PropTypes from "prop-types";
 import "./OkrDashboard.scss";
-import { hierarchalOkrs } from "../../utils/helper/okrHelper";
+import {
+  filterOkrsByCategory,
+  getCategoryList,
+  hierarchalOkrs,
+} from "../../utils/helper/okrHelper";
 import Objective from "../../components/objective/Objective";
 import KeyResult from "../../components/keyResult/KeyResult";
+import NoData from "../../components/noData/NoData";
 
 const OkrDashboard = ({ processedOkrs, fetchOkrs }) => {
   useEffect(() => {
     fetchOkrs();
   }, []);
 
-  let count = 1;
-  let objectiveCount = 1;
-  // let keyResultCount = 1;
-
   return (
     <>
       <div className="dashboard_container">
-        {Object.keys(processedOkrs).map((objectiveId) => (
+        {Object.keys(processedOkrs).map((objectiveId, idx) => (
           <div key={processedOkrs[objectiveId].keyId}>
-            {/* O: {count++} :  */}
-            <Objective
-              order={objectiveCount++}
-              data={processedOkrs[objectiveId]}
-            >
+            <Objective order={idx + 1} data={processedOkrs[objectiveId]}>
               {processedOkrs[objectiveId].children.length ? (
                 processedOkrs[objectiveId].children.map((keyResult, idx) => {
                   return (
@@ -33,13 +30,11 @@ const OkrDashboard = ({ processedOkrs, fetchOkrs }) => {
                       key={keyResult.keyId}
                       order={idx + 1}
                       data={keyResult}
-                    >
-                      K: {count++}
-                    </KeyResult>
+                    />
                   );
                 })
               ) : (
-                <div>No Key Results</div>
+                <NoData message={"No Key Results"} />
               )}
             </Objective>
           </div>
@@ -52,11 +47,16 @@ const OkrDashboard = ({ processedOkrs, fetchOkrs }) => {
 OkrDashboard.propTypes = {
   processedOkrs: PropTypes.object,
   fetchOkrs: PropTypes.func,
+  selectedCategory: PropTypes.string,
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  const okrs = state.okrs.data.data;
   return {
-    processedOkrs: hierarchalOkrs(state.okrs.data.data),
+    categoryList: getCategoryList(okrs),
+    processedOkrs: hierarchalOkrs(
+      filterOkrsByCategory(okrs, ownProps.selectedCategory)
+    ),
   };
 };
 
