@@ -6,6 +6,10 @@ https://okrdashboard.herokuapp.com
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Assumptions
+
+- Considering only two level heirarchy.
+
 ## Available Scripts
 
 In the project directory, you can run:
